@@ -47,49 +47,54 @@ function computerChoice() {
     return options[optionIndex];
 }
 
+// Helper function to capitalize FirstLetter of the choice before displaying
+function capitalizeFirstLetter(option) {
+    return (option.charAt(0).toUpperCase() + option.slice(1).toLowerCase());
+}
+
 function compareChoices(player, computer) {
     let playerSelected = player.toLowerCase();
     let computerSelected = computer.toLowerCase();
 
     if (playerSelected === "rock") {
         if (computerSelected === "scissors") {
-            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Player Won.`;
+            resultText.innerText = `The Player Selected: ${capitalizeFirstLetter(playerSelected)} and The Computer Selected: ${capitalizeFirstLetter(computerSelected)}. So, The Player Won.`;
             playerScore.innerText++;
         }
         else if (computerSelected === "paper") {
-            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Computer Won.`;
+            resultText.innerText = `The Player Selected: ${capitalizeFirstLetter(playerSelected)} and The Computer Selected: ${capitalizeFirstLetter(computerSelected)}. So, The Computer Won.`;
             computerScore.innerText++;
         }
         else {
-            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Game Tied.`;
+            resultText.innerText = `The Player Selected: ${capitalizeFirstLetter(playerSelected)} and The Computer Selected: ${capitalizeFirstLetter(computerSelected)}. So, The Game Tied.`;
         }
 
     }
     else if (playerSelected === "paper") {
         if (computerSelected === "rock") {
-            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Player Won.`;
+            resultText.innerText = `The Player Selected: ${capitalizeFirstLetter(playerSelected)} and The Computer Selected: ${capitalizeFirstLetter(computerSelected)}. So, The Player Won.`;
             playerScore.innerText++;
         }
         else if (computerSelected === "scissors") {
-            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Computer Won.`;
+            resultText.innerText = `The Player Selected: ${capitalizeFirstLetter(playerSelected)} and The Computer Selected: ${capitalizeFirstLetter(computerSelected)}. So, The Computer Won.`;
             computerScore.innerText++;
         }
         else {
-            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Game Tied.`;
+            resultText.innerText = `The Player Selected: ${capitalizeFirstLetter(playerSelected)} and The Computer Selected: ${capitalizeFirstLetter(computerSelected)}. So, The Game Tied.`;
         }
 
     }
     else if (playerSelected === "scissors") {
         if (computerSelected === "paper") {
-            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Player Won.`;
+            resultText.innerText = `The Player Selected: ${capitalizeFirstLetter(playerSelected)} and The Computer Selected: ${capitalizeFirstLetter(computerSelected)}. So, The Player Won.`;
             playerScore.innerText++;
         }
         else if (computerSelected === "rock") {
-            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Computer Won.`;
+            resultText.innerText = `The Player Selected: ${capitalizeFirstLetter(playerSelected)} and The Computer Selected: ${capitalizeFirstLetter(computerSelected)}. So, The Computer Won.`;
             computerScore.innerText++;
         }
         else {
-            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Game Tied.`;
+            resultText.innerText = `The Player Selected: ${capitalizeFirstLetter(playerSelected)} and The Computer Selected: ${capitalizeFirstLetter(computerSelected)}. So, The Game Tied.`;
         }
 
     }
