@@ -23,22 +23,76 @@ startButton.addEventListener('click', function (e) {
 
 resetButton.addEventListener('click', function (e) {
     resultText.innerText = "Let's start again!";
-    playerScore.innerText = '';
-    computerScore.innerText = '';
+    playerScore.innerText = '0';
+    computerScore.innerText = '0';
 });
 
 rockSelected.addEventListener('click', function (e) {
     playerSelection = "Rock";
-    console.log(playerSelection);
+    compareChoices(playerSelection, computerChoice())
 });
 
 paperSelected.addEventListener('click', function (e) {
     playerSelection = "Paper";
-    console.log(playerSelection);
+    compareChoices(playerSelection, computerChoice())
 });
 
 scissorSelected.addEventListener('click', function (e) {
     playerSelection = "Scissors";
-    console.log(playerSelection);
+    compareChoices(playerSelection, computerChoice())
 });
 
+function computerChoice() {
+    let options = ['Rock', "Paper", "Scissors"];
+    let optionIndex = Math.floor(Math.random() * options.length);
+    return options[optionIndex];
+}
+
+function compareChoices(player, computer) {
+    let playerSelected = player.toLowerCase();
+    let computerSelected = computer.toLowerCase();
+
+    if (playerSelected === "rock") {
+        if (computerSelected === "scissors") {
+            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Player Won.`;
+            playerScore.innerText++;
+        }
+        else if (computerSelected === "paper") {
+            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Computer Won.`;
+            computerScore.innerText++;
+        }
+        else {
+            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Game Tied.`;
+        }
+
+    }
+    else if (playerSelected === "paper") {
+        if (computerSelected === "rock") {
+            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Player Won.`;
+            playerScore.innerText++;
+        }
+        else if (computerSelected === "scissors") {
+            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Computer Won.`;
+            computerScore.innerText++;
+        }
+        else {
+            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Game Tied.`;
+        }
+
+    }
+    else if (playerSelected === "scissors") {
+        if (computerSelected === "paper") {
+            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Player Won.`;
+            playerScore.innerText++;
+        }
+        else if (computerSelected === "rock") {
+            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Computer Won.`;
+            computerScore.innerText++;
+        }
+        else {
+            resultText.innerText = `The Player Selected: ${playerSelected.charAt(0).toUpperCase() + playerSelected.slice(1)} and The Computer Selected: ${computerSelected.charAt(0).toUpperCase() + computerSelected.slice(1)}. So, The Game Tied.`;
+        }
+
+    }
+
+}
